@@ -1,8 +1,10 @@
-#!/usr/bin/env 
+#!/usr/bin/env
 # -*- coding: utf-8 -*-
 
 from sys import argv
-script,input_file = argv 
+
+script, input_file = argv
+
 def print_all(f):
 	print f.read()
 
@@ -14,3 +16,20 @@ def print_a_line(line_count,f):
 
 current_file = open(input_file)
 
+print "首先，让我们打印整个文件：\n"
+
+print_all(current_file)
+
+print "现在，让我们倒带，有点像磁带。"
+rewind(current_file)
+
+print "Let's print three lines:"
+
+current_line = 1
+print_a_line(current_line, current_file)
+
+current_line = current_line + 1
+print_a_line(current_line, current_file)
+
+current_line = current_line + 1
+print_a_line(current_line, current_file)
